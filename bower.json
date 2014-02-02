@@ -1,0 +1,31 @@
+{
+  "name": "object-assign",
+  "version": "0.0.0",
+  "description": "ES6 Object.assign() ponyfill",
+  "license": "MIT",
+  "main": "object-assign.js",
+  "authors": [{
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  }],
+  "keywords": [
+    "object",
+    "assign",
+    "extend",
+    "properties",
+    "es6",
+    "ecmascript",
+    "harmony",
+    "ponyfill",
+    "prollyfill",
+    "polyfill",
+    "shim"
+  ],
+  "ignore": [
+    ".*",
+    "test.js",
+    "component.json",
+    "package.json"
+  ]
+}
