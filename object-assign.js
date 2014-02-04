@@ -10,7 +10,7 @@
 
 	var ToObject = function (val) {
 		if (val == null) {
-			throw new TypeError();
+			throw new TypeError('Object.assign can not be called with null or undefined');
 		}
 
 		return Object(val);
@@ -21,9 +21,8 @@
 		var to = ToObject(target);
 		var from = ToObject(source);
 		var keys = Object.keys(from);
-		var i = keys.length;
 
-		while (i--) {
+		for (var i = 0; i < keys.length; i++) {
 			try {
 				to[keys[i]] = from[keys[i]];
 			} catch (err) {
