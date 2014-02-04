@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "ES6 Object.assign() ponyfill",
   "license": "MIT",
+  "main": "object-assign.js",
   "repository": "sindresorhus/object-assign",
   "author": {
     "name": "Sindre Sorhus",
