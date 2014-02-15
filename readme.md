@@ -2,9 +2,9 @@
 
 > ES6 [`Object.assign()`](http://www.2ality.com/2014/01/object-assign.html) ponyfill
 
-I would love for this to be a fully compliant polyfill, but I have no idea how to read the [ES6 spec](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign). Help appreciated :)
+Should be pretty close to the spec.
 
-> Ponyfill: An almost conforming polyfill which doesn't overwrite the native method
+> Ponyfill: A polyfill that doesn't overwrite the native method
 
 
 ## Install
@@ -47,6 +47,11 @@ objectAssign({foo: 0}, {bar: 1});
 ### objectAssign(target, source)
 
 Assigns enumerable own properties of the `source` object to the `target` object and returns the `target` object.
+
+
+## Resources
+
+- [ES6 spec - Object.assign](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign)
 
 
 ## License
