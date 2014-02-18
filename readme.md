@@ -49,6 +49,13 @@ objectAssign({foo: 0}, {bar: 1});
 Assigns enumerable own properties of the `source` object to the `target` object and returns the `target` object.
 
 
+## Multiple sources
+
+Unfortunately support for multiple sources aren't defined in the Object.assign spec.
+
+However, you can easily achieve it with `[target, source, source, ...].reduce(objectAssign)`.
+
+
 ## Resources
 
 - [ES6 spec - Object.assign](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign)
