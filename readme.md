@@ -1,8 +1,6 @@
-# object-assign [![Build Status](https://travis-ci.org/sindresorhus/object-assign.png?branch=master)](http://travis-ci.org/sindresorhus/object-assign)
+# object-assign [![Build Status](https://travis-ci.org/sindresorhus/object-assign.svg?branch=master)](https://travis-ci.org/sindresorhus/object-assign)
 
 > ES6 [`Object.assign()`](http://www.2ality.com/2014/01/object-assign.html) ponyfill
-
-Should be pretty close to the spec.
 
 > Ponyfill: A polyfill that doesn't overwrite the native method
 
@@ -11,26 +9,20 @@ Should be pretty close to the spec.
 
 Download [manually](https://github.com/sindresorhus/object-assign/releases) or with a package-manager.
 
-#### [npm](https://npmjs.org/package/object-assign)
-
-```
-npm install --save object-assign
+```bash
+$ npm install --save object-assign
 ```
 
-#### [Bower](http://bower.io)
-
-```
-bower install --save object-assign
+```bash
+$ bower install --save object-assign
 ```
 
-#### [Component](https://github.com/component/component)
-
-```
-component install sindresorhus/object-assign
+```bash
+$ component install sindresorhus/object-assign
 ```
 
 
-## Example
+## Usage
 
 ```js
 objectAssign({foo: 0}, {bar: 1});
@@ -63,4 +55,4 @@ However, you can easily achieve it with `[target, source, source, ...].reduce(ob
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
