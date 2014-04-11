@@ -20,3 +20,12 @@ it('should support multiple sources', function () {
 	assert.deepEqual(assign({foo: 0}, {bar: 1}, {bar: 2}), {foo: 0, bar: 2});
 	assert.deepEqual(assign({}, {}, {foo: 1}), {foo: 1});
 });
+
+it('should only iterate own keys', function () {
+	var Unicorn = function () {};
+	Unicorn.prototype.rainbows = 'many';
+	var unicorn = new Unicorn();
+	unicorn.bar = 1;
+
+	assert.deepEqual(assign({foo: 1}, unicorn), {foo: 1, bar: 1});
+});
