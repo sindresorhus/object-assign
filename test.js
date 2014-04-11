@@ -12,5 +12,11 @@ it('should throw on `null` and `undefined`', function () {
 		assign({}, null);
 		assign(undefined, {});
 		assign({}, undefined);
+		assign({}, undefined, null);
 	});
+});
+
+it('should support multiple sources', function () {
+	assert.deepEqual(assign({foo: 0}, {bar: 1}, {bar: 2}), {foo: 0, bar: 2});
+	assert.deepEqual(assign({}, {}, {foo: 1}), {foo: 1});
 });

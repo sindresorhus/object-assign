@@ -18,16 +18,21 @@
 
 	var objectAssign = Object.assign || function (target, source) {
 		var pendingException;
+		var from;
+		var keys;
 		var to = ToObject(target);
-		var from = ToObject(source);
-		var keys = Object.keys(from);
 
-		for (var i = 0; i < keys.length; i++) {
-			try {
-				to[keys[i]] = from[keys[i]];
-			} catch (err) {
-				if (pendingException === undefined) {
-					pendingException = err;
+		for (var s = 1; s < arguments.length; s++) {
+			from = ToObject(arguments[s]);
+			keys = Object.keys(from)
+
+			for (var i = 0; i < keys.length; i++) {
+				try {
+					to[keys[i]] = from[keys[i]];
+				} catch (err) {
+					if (pendingException === undefined) {
+						pendingException = err;
+					}
 				}
 			}
 		}

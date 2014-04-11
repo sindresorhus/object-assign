@@ -29,23 +29,16 @@ objectAssign({foo: 0}, {bar: 1});
 //=> {foo: 0, bar: 1}
 
 // multiple sources
-[{bar: 1}, {baz: 2}].reduce(objectAssign, {foo: 0});
+objectAssign({foo: 0}, {bar: 1}, {baz: 3});
 //=> {foo: 0, bar: 1, baz: 2}
 ```
 
 
 ## API
 
-### objectAssign(target, source)
+### objectAssign(target, source, [source, ...])
 
-Assigns enumerable own properties of the `source` object to the `target` object and returns the `target` object.
-
-
-## Multiple sources
-
-Unfortunately support for multiple sources aren't defined in the Object.assign spec.
-
-However, you can easily achieve it with `[target, source, source, ...].reduce(objectAssign)`.
+Assigns enumerable own properties of `source` objects to the `target` object and returns the `target` object. Additional `source` objects will overwrite previous ones.
 
 
 ## Resources
