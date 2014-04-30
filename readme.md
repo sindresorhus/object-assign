@@ -7,17 +7,15 @@
 
 ## Install
 
-Download [manually](https://github.com/sindresorhus/object-assign/releases) or with a package-manager.
-
-```bash
+```sh
 $ npm install --save object-assign
 ```
 
-```bash
+```sh
 $ bower install --save object-assign
 ```
 
-```bash
+```sh
 $ component install sindresorhus/object-assign
 ```
 
