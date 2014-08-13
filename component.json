@@ -1,6 +1,6 @@
 {
   "name": "object-assign",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "ES6 Object.assign() ponyfill",
   "license": "MIT",
   "repository": "sindresorhus/object-assign",
