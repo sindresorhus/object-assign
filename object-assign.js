@@ -23,8 +23,8 @@
 		var to = ToObject(target);
 
 		for (var s = 1; s < arguments.length; s++) {
-			from = ToObject(arguments[s]);
-			keys = Object.keys(from)
+			from = arguments[s];
+			keys = Object.keys(Object(from));
 
 			for (var i = 0; i < keys.length; i++) {
 				try {

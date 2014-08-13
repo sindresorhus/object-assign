@@ -4,14 +4,34 @@ var assign = require('./object-assign');
 
 it('should assign own enumerable properties from source to target object', function () {
 	assert.deepEqual(assign({foo: 0}, {bar: 1}), {foo: 0, bar: 1});
+	assert.deepEqual(assign({foo: 0}, null, undefined), {foo: 0});
+	assert.deepEqual(assign({foo: 0}, null, undefined, {bar: 1}, null), {foo: 0, bar: 1});
 });
 
-it('should throw on `null` and `undefined`', function () {
+it('should throw on null/undefined target', function () {
 	assert.throws(function () {
 		assign(null, {});
-		assign({}, null);
+	});
+
+	assert.throws(function () {
 		assign(undefined, {});
+	});
+
+	assert.throws(function () {
+		assign(undefined, undefined);
+	});
+});
+
+it('should not throw on null/undefined sources', function () {
+	assert.doesNotThrow(function () {
+		assign({}, null);
+	});
+
+	assert.doesNotThrow(function () {
 		assign({}, undefined);
+	});
+
+	assert.doesNotThrow(function () {
 		assign({}, undefined, null);
 	});
 });
