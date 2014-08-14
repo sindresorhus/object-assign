@@ -11,23 +11,21 @@
 $ npm install --save object-assign
 ```
 
-```sh
-$ bower install --save object-assign
-```
-
-```sh
-$ component install sindresorhus/object-assign
-```
-
 
 ## Usage
 
 ```js
+var objectAssign = require('object-assign');
+
 objectAssign({foo: 0}, {bar: 1});
 //=> {foo: 0, bar: 1}
 
 // multiple sources
 objectAssign({foo: 0}, {bar: 1}, {baz: 3});
+//=> {foo: 0, bar: 1, baz: 2}
+
+// ignores null and undefined sources
+objectAssign({foo: 0}, null, {bar: 1}, undefined);
 //=> {foo: 0, bar: 1, baz: 2}
 ```
 
@@ -46,4 +44,4 @@ Assigns enumerable own properties of `source` objects to the `target` object and
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
