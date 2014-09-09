@@ -26,7 +26,7 @@ objectAssign({foo: 0}, {bar: 1}, {baz: 3});
 
 // ignores null and undefined sources
 objectAssign({foo: 0}, null, {bar: 1}, undefined);
-//=> {foo: 0, bar: 1, baz: 2}
+//=> {foo: 0, bar: 1}
 ```
 
 
