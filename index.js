@@ -9,7 +9,6 @@ function ToObject(val) {
 }
 
 module.exports = Object.assign || function (target, source) {
-	var pendingException;
 	var from;
 	var keys;
 	var to = ToObject(target);
@@ -19,18 +18,8 @@ module.exports = Object.assign || function (target, source) {
 		keys = Object.keys(Object(from));
 
 		for (var i = 0; i < keys.length; i++) {
-			try {
-				to[keys[i]] = from[keys[i]];
-			} catch (err) {
-				if (pendingException === undefined) {
-					pendingException = err;
-				}
-			}
+			to[keys[i]] = from[keys[i]];
 		}
-	}
-
-	if (pendingException) {
-		throw pendingException;
 	}
 
 	return to;

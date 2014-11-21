@@ -2,6 +2,15 @@
 var assert = require('assert');
 var assign = require('./');
 
+it('should have the correct length', function () {
+	assert.equal(assign.length, 2);
+});
+
+it('should throw when target is not an object', function () {
+	assert.throws(function () { assign(null); }, TypeError);
+	assert.throws(function () { assign(undefined); }, TypeError);
+});
+
 it('should assign own enumerable properties from source to target object', function () {
 	assert.deepEqual(assign({foo: 0}, {bar: 1}), {foo: 0, bar: 1});
 	assert.deepEqual(assign({foo: 0}, null, undefined), {foo: 0});
@@ -48,4 +57,10 @@ it('should only iterate own keys', function () {
 	unicorn.bar = 1;
 
 	assert.deepEqual(assign({foo: 1}, unicorn), {foo: 1, bar: 1});
+});
+
+it('should return the modified target object', function () {
+	var target = {};
+	var returned = assign(target, { a: 1 });
+	assert.equal(returned, target);
 });
