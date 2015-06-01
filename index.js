@@ -8,6 +8,16 @@ function ToObject(val) {
 	return Object(val);
 }
 
+function ownEnumerableKeys(obj) {
+	var keys = Object.getOwnPropertyNames(obj);
+	if (Object.getOwnPropertySymbols) {
+		keys = keys.concat(Object.getOwnPropertySymbols(obj));
+	}
+	return keys.filter(function (key) {
+		return Object.getOwnPropertyDescriptor(obj, key).enumerable;
+	});
+}
+
 module.exports = Object.assign || function (target, source) {
 	var from;
 	var keys;
@@ -15,7 +25,7 @@ module.exports = Object.assign || function (target, source) {
 
 	for (var s = 1; s < arguments.length; s++) {
 		from = arguments[s];
-		keys = Object.keys(Object(from));
+		keys = ownEnumerableKeys(Object(from));
 
 		for (var i = 0; i < keys.length; i++) {
 			to[keys[i]] = from[keys[i]];
