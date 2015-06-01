@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-Object.objectAssign = undefined;
+Object.assign = undefined;
 var objectAssign = require('./');
 
 it('should have the correct length', function () {
