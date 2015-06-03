@@ -13,8 +13,8 @@ function ownEnumerableKeys(obj) {
 	if (Object.getOwnPropertySymbols) {
 		keys = keys.concat(Object.getOwnPropertySymbols(obj));
 	}
-	return keys.filter(function(key) {
-		obj.propertyIsEnumerable(key);
+	return keys.filter(function (key) {
+		return obj.propertyIsEnumerable(key);
 	});
 }
 
