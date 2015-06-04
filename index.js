@@ -1,4 +1,5 @@
 'use strict';
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
 function ToObject(val) {
 	if (val == null) {
@@ -16,7 +17,7 @@ function ownEnumerableKeys(obj) {
 	}
 
 	return keys.filter(function (key) {
-		return obj.propertyIsEnumerable(key);
+		return propIsEnumerable.call(obj, key);
 	});
 }
 
