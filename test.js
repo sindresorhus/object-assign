@@ -66,6 +66,12 @@ it('should return the modified target object', function () {
 	assert.equal(returned, target);
 });
 
+it('should support `Object.create(null)` objects', function () {
+	var obj = Object.create(null);
+	obj.foo = true;
+	assert.deepEqual(objectAssign({}, obj), {foo: true});
+});
+
 if (typeof Symbol !== 'undefined') {
 	it('should support symbol properties', function () {
 		var target = {};
