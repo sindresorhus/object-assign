@@ -65,3 +65,14 @@ it('should return the modified target object', function () {
 	var returned = objectAssign(target, { a: 1 });
 	assert.equal(returned, target);
 });
+
+if (typeof Symbol !== 'undefined') {
+	it('should support symbol properties', function () {
+		var target = {};
+		var source = {};
+		var sym = Symbol('foo');
+		source[sym] = 'bar';
+		objectAssign(target, source);
+		assert.equal(target[sym], 'bar');
+	});
+}
