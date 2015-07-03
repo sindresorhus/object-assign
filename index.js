@@ -31,8 +31,8 @@ module.exports = Object.assign || function (target, source) {
 		keys = ownEnumerableKeys(Object(from));
 
 		for (var i = 0; i < keys.length; i++) {
-      var desc = Object.getOwnPropertyDescriptor(from, keys[i]);
-      Object.defineProperty(to, keys[i], desc);
+			var desc = Object.getOwnPropertyDescriptor(from, keys[i]);
+			Object.defineProperty(to, keys[i], desc);
 		}
 	}
 
