@@ -22,15 +22,16 @@ function ownEnumerableKeys(obj) {
 }
 
 module.exports = Object.assign || function (target, source) {
-	var from;
-	var keys;
+	var from,i,numKeys,keys,s;
+	var numArgs = arguments.length;
 	var to = ToObject(target);
 
-	for (var s = 1; s < arguments.length; s++) {
+	for (s = 1; s < numArgs; s++) {
 		from = arguments[s];
 		keys = ownEnumerableKeys(Object(from));
+		numKeys = keys.length;
 
-		for (var i = 0; i < keys.length; i++) {
+		for (i = 0; i < numKeys; i++) {
 			to[keys[i]] = from[keys[i]];
 		}
 	}
