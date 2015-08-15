@@ -1,5 +1,5 @@
 'use strict';
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 function ToObject(val) {
 	if (val == null) {
@@ -9,29 +9,26 @@ function ToObject(val) {
 	return Object(val);
 }
 
-function ownEnumerableKeys(obj) {
-	var keys = Object.getOwnPropertyNames(obj);
-
-	if (Object.getOwnPropertySymbols) {
-		keys = keys.concat(Object.getOwnPropertySymbols(obj));
-	}
-
-	return keys.filter(function (key) {
-		return propIsEnumerable.call(obj, key);
-	});
-}
-
 module.exports = Object.assign || function (target, source) {
 	var from;
 	var keys;
 	var to = ToObject(target);
+	var symbols;
 
 	for (var s = 1; s < arguments.length; s++) {
-		from = arguments[s];
-		keys = ownEnumerableKeys(Object(from));
+		from = Object(arguments[s]);
 
-		for (var i = 0; i < keys.length; i++) {
-			to[keys[i]] = from[keys[i]];
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (Object.getOwnPropertySymbols) {
+			symbols = Object.getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				to[symbols[i]] = from[symbols[i]];
+			}
 		}
 	}
 
