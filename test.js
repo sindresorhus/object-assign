@@ -72,6 +72,16 @@ it('should support `Object.create(null)` objects', function () {
 	assert.deepEqual(objectAssign({}, obj), {foo: true});
 });
 
+it('should preserve right properties order', function () {
+	var letters = 'abcdefghijklmnopqrst';
+	var source = {};
+	letters.split('').forEach(function (letter) {
+	    source[letter] = letter;
+	});
+	var target = objectAssign({}, source);
+	assert.equal(Object.keys(target).join(''), letters);
+});
+
 if (typeof Symbol !== 'undefined') {
 	it('should support symbol properties', function () {
 		var target = {};
