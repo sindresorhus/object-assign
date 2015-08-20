@@ -13,7 +13,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "bench": "matcha bench.js"
   },
   "files": [
     "index.js"
@@ -33,6 +34,8 @@
     "browser"
   ],
   "devDependencies": {
+    "lodash": "^3.10.1",
+    "matcha": "^0.6.0",
     "mocha": "*"
   }
 }
