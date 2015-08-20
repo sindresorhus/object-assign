@@ -76,7 +76,7 @@ it('should support `Object.create(null)` objects', function () {
 	assert.deepEqual(objectAssign({}, obj), {foo: true});
 });
 
-it('should preserve right properties order', function () {
+it('should preserve property order', function () {
 	var letters = 'abcdefghijklmnopqrst';
 	var source = {};
 	letters.split('').forEach(function (letter) {
@@ -96,7 +96,7 @@ if (typeof Symbol !== 'undefined') {
 		assert.equal(target[sym], 'bar');
 	});
 
-	it('should not copy not-enumerable symbols', function () {
+	it('should only copy enumerable symbols', function () {
 		var target = {};
 		var source = {};
 		var sym = Symbol('foo');
