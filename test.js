@@ -95,4 +95,16 @@ if (typeof Symbol !== 'undefined') {
 		objectAssign(target, source);
 		assert.equal(target[sym], 'bar');
 	});
+
+	it('should not copy not-enumerable symbols', function () {
+		var target = {};
+		var source = {};
+		var sym = Symbol('foo');
+		Object.defineProperty(source, sym, {
+			enumerable: false,
+			value: 'bar'
+		});
+		objectAssign(target, source);
+		assert.equal(target[sym], undefined);
+	});
 }
