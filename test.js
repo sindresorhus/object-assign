@@ -8,8 +8,12 @@ it('should have the correct length', function () {
 });
 
 it('should throw when target is not an object', function () {
-	assert.throws(function () { objectAssign(null); }, TypeError);
-	assert.throws(function () { objectAssign(undefined); }, TypeError);
+	assert.throws(function () {
+		objectAssign(null);
+	}, TypeError);
+	assert.throws(function () {
+		objectAssign(undefined);
+	}, TypeError);
 });
 
 it('should objectAssign own enumerable properties from source to target object', function () {
@@ -62,7 +66,7 @@ it('should only iterate own keys', function () {
 
 it('should return the modified target object', function () {
 	var target = {};
-	var returned = objectAssign(target, { a: 1 });
+	var returned = objectAssign(target, {a: 1});
 	assert.equal(returned, target);
 });
 
@@ -76,7 +80,7 @@ it('should preserve right properties order', function () {
 	var letters = 'abcdefghijklmnopqrst';
 	var source = {};
 	letters.split('').forEach(function (letter) {
-	    source[letter] = letter;
+		source[letter] = letter;
 	});
 	var target = objectAssign({}, source);
 	assert.equal(Object.keys(target).join(''), letters);

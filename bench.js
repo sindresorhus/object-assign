@@ -1,4 +1,5 @@
-var assert = require('assert');
+/* global bench */
+'use strict';
 var lodash = require('lodash');
 var objectAssign = require('./');
 
