@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
 function toObject(val) {
 	if (val === null || val === undefined) {
@@ -27,7 +28,9 @@ module.exports = Object.assign || function (target, source) {
 		if (Object.getOwnPropertySymbols) {
 			symbols = Object.getOwnPropertySymbols(from);
 			for (var i = 0; i < symbols.length; i++) {
-				to[symbols[i]] = from[symbols[i]];
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
 			}
 		}
 	}
