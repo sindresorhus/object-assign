@@ -46,6 +46,11 @@ Assigns enumerable own properties of `source` objects to the `target` object and
 - [ES6 spec - Object.assign](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign)
 
 
+## Related
+
+- [deep-assign](https://github.com/sindresorhus/deep-assign) - Recursive `Object.assign()`
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com)
