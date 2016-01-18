@@ -1,9 +1,21 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 (function (name, definition, context, dependencies) {
-    if (typeof context['module'] !== 'undefined' && context['module']['exports']) { if (dependencies && context['require']) { for (var i = 0; i < dependencies.length; i++) context[dependencies[i]] = context['require'](dependencies[i]); } context['module']['exports'] = definition.apply(context); }
-    else if (typeof context['define'] !== 'undefined' && typeof context['define'] === 'function' && context['define']['amd']) { define(name, (dependencies || []), definition); }
-    else { context[name] = definition(); }
+    if (typeof context['module'] !== 'undefined' && context['module']['exports']) 
+    { 
+    	if (dependencies && context['require']) { 
+    		for (var i = 0; i < dependencies.length; i++) 
+    		context[dependencies[i]] = context['require'](dependencies[i]); 
+    	} 
+    	context['module']['exports'] = definition.apply(context); 
+    }
+    else if (typeof context['define'] !== 'undefined' && typeof context['define'] === 'function' && context['define']['amd']) 
+    { 
+    	define(name, (dependencies || []), definition); 
+    }
+    else { 
+    	context[name] = definition(); 
+    }
 })('objectAssign', function () {
     var hasOwnProperty = Object.prototype.hasOwnProperty;
     var propIsEnumerable = Object.prototype.propertyIsEnumerable;
