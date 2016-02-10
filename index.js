@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 'use strict';
 
 var _hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -12,6 +11,7 @@ function toObject(val) {
 	return Object(val);
 }
 
+/* eslint-disable no-unused-vars */
 function objectAssign(target, source) {
 	var from;
 	var to = toObject(target);

@@ -53,6 +53,20 @@ Object.assign({}, myObject, { foo: 1, baz: 3 });
 
 Assigns enumerable own properties of `source` objects to the `target` object and returns the `target` object. Additional `source` objects will overwrite previous ones.
 
+## Tests
+
+Run ES Lint and Mocha tests:
+
+```
+npm test
+```
+
+Run JSHint:
+
+```
+npm run jshint
+```
+
 
 ## Resources
 
