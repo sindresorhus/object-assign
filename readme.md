@@ -14,6 +14,8 @@ $ npm install --save object-assign
 
 ## Usage
 
+### Node.js
+
 ```js
 var objectAssign = require('object-assign');
 
@@ -34,11 +36,36 @@ objectAssign({foo: 0}, null, {bar: 1}, undefined);
 ```
 
 
+### Browser
+
+If `Object.assign` is undefined in the browser, it will be reassigned with the polyfill. It can be used as follows:
+
+```js
+var myObject = { foo: 0, bar: 1 };
+Object.assign({}, myObject, { foo: 1, baz: 3 });
+// => Object { foo: 1, bar: 1, baz: 3 }
+```
+
+
 ## API
 
 ### objectAssign(target, source, [source, ...])
 
 Assigns enumerable own properties of `source` objects to the `target` object and returns the `target` object. Additional `source` objects will overwrite previous ones.
+
+## Tests
+
+Run ES Lint and Mocha tests:
+
+```
+npm test
+```
+
+Run JSHint:
+
+```
+npm run jshint
+```
 
 
 ## Resources
