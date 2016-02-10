@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "xo && mocha",
-    "bench": "matcha bench.js"
+    "bench": "matcha bench.js",
+    "jshint": "jshint index.js"
   },
   "files": [
     "index.js"
@@ -34,10 +35,11 @@
     "browser"
   ],
   "devDependencies": {
+    "jshint": "^2.9.1",
     "lodash": "^3.10.1",
     "matcha": "^0.6.0",
-    "mocha": "*",
-    "xo": "*"
+    "mocha": "^2.4.5",
+    "xo": "^0.12.1"
   },
   "xo": {
     "envs": [

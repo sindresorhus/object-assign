@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 'use strict';
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+var _hasOwnProperty = Object.prototype.hasOwnProperty;
+var _propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
 function toObject(val) {
 	if (val === null || val === undefined) {
@@ -11,7 +12,7 @@ function toObject(val) {
 	return Object(val);
 }
 
-module.exports = Object.assign || function (target, source) {
+function objectAssign(target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -20,7 +21,7 @@ module.exports = Object.assign || function (target, source) {
 		from = Object(arguments[s]);
 
 		for (var key in from) {
-			if (hasOwnProperty.call(from, key)) {
+			if (_hasOwnProperty.call(from, key)) {
 				to[key] = from[key];
 			}
 		}
@@ -28,7 +29,7 @@ module.exports = Object.assign || function (target, source) {
 		if (Object.getOwnPropertySymbols) {
 			symbols = Object.getOwnPropertySymbols(from);
 			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable.call(from, symbols[i])) {
+				if (_propIsEnumerable.call(from, symbols[i])) {
 					to[symbols[i]] = from[symbols[i]];
 				}
 			}
@@ -36,4 +37,14 @@ module.exports = Object.assign || function (target, source) {
 	}
 
 	return to;
-};
+}
+
+// Node.js
+if (typeof module !== 'undefined') {
+	module.exports = Object.assign || objectAssign;
+}
+
+// Browser
+if (typeof Object.assign === 'undefined') {
+	Object.assign = objectAssign;
+}
