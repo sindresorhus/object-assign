@@ -14,6 +14,8 @@ $ npm install --save object-assign
 
 ## Usage
 
+### Node.js
+
 ```js
 var objectAssign = require('object-assign');
 
@@ -31,6 +33,17 @@ objectAssign({foo: 0}, {foo: 1}, {foo: 2});
 // ignores null and undefined sources
 objectAssign({foo: 0}, null, {bar: 1}, undefined);
 //=> {foo: 0, bar: 1}
+```
+
+
+### Browser
+
+If `Object.assign` is undefined in the browser, it will be reassigned with the polyfill. It can be used as follows:
+
+```js
+var myObject = { foo: 0, bar: 1 };
+Object.assign({}, myObject, { foo: 1, baz: 3 });
+// => Object { foo: 1, bar: 1, baz: 3 }
 ```
 
 
