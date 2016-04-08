@@ -7,7 +7,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save object-assign
 ```
 
@@ -15,7 +15,7 @@ $ npm install --save object-assign
 ## Usage
 
 ```js
-var objectAssign = require('object-assign');
+const objectAssign = require('object-assign');
 
 objectAssign({foo: 0}, {bar: 1});
 //=> {foo: 0, bar: 1}
@@ -53,4 +53,4 @@ Assigns enumerable own properties of `source` objects to the `target` object and
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

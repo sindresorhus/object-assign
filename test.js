@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-env mocha */
 var assert = require('assert');
 Object.assign = undefined;
 var objectAssign = require('./');
