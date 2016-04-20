@@ -1,7 +1,7 @@
 {
   "name": "object-assign",
   "version": "4.0.1",
-  "description": "ES6 Object.assign() ponyfill",
+  "description": "ES2015 Object.assign() ponyfill",
   "license": "MIT",
   "repository": "sindresorhus/object-assign",
   "author": {
@@ -24,7 +24,7 @@
     "assign",
     "extend",
     "properties",
-    "es6",
+    "es2015",
     "ecmascript",
     "harmony",
     "ponyfill",
