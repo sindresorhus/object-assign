@@ -1,6 +1,7 @@
 'use strict';
 /* eslint-env mocha */
 var assert = require('assert');
+
 Object.assign = undefined;
 var objectAssign = require('./');
 
@@ -18,9 +19,15 @@ it('should throw when target is not an object', function () {
 });
 
 it('should objectAssign own enumerable properties from source to target object', function () {
-	assert.deepEqual(objectAssign({foo: 0}, {bar: 1}), {foo: 0, bar: 1});
+	assert.deepEqual(objectAssign({foo: 0}, {bar: 1}), {
+		foo: 0,
+		bar: 1
+	});
 	assert.deepEqual(objectAssign({foo: 0}, null, undefined), {foo: 0});
-	assert.deepEqual(objectAssign({foo: 0}, null, undefined, {bar: 1}, null), {foo: 0, bar: 1});
+	assert.deepEqual(objectAssign({foo: 0}, null, undefined, {bar: 1}, null), {
+		foo: 0,
+		bar: 1
+	});
 });
 
 it('should throw on null/undefined target', function () {
@@ -52,7 +59,10 @@ it('should not throw on null/undefined sources', function () {
 });
 
 it('should support multiple sources', function () {
-	assert.deepEqual(objectAssign({foo: 0}, {bar: 1}, {bar: 2}), {foo: 0, bar: 2});
+	assert.deepEqual(objectAssign({foo: 0}, {bar: 1}, {bar: 2}), {
+		foo: 0,
+		bar: 2
+	});
 	assert.deepEqual(objectAssign({}, {}, {foo: 1}), {foo: 1});
 });
 
@@ -62,7 +72,10 @@ it('should only iterate own keys', function () {
 	var unicorn = new Unicorn();
 	unicorn.bar = 1;
 
-	assert.deepEqual(objectAssign({foo: 1}, unicorn), {foo: 1, bar: 1});
+	assert.deepEqual(objectAssign({foo: 1}, unicorn), {
+		foo: 1,
+		bar: 1
+	});
 });
 
 it('should return the modified target object', function () {
