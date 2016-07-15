@@ -100,6 +100,13 @@ it('should preserve property order', function () {
 	assert.equal(Object.keys(target).join(''), letters);
 });
 
+it('should accept primitives as target', function () {
+	var target = objectAssign('abcdefg', {foo: 'bar'});
+	var strObj = Object('abcdefg');
+	strObj.foo = 'bar';
+	assert.deepEqual(target, strObj);
+});
+
 if (typeof Symbol !== 'undefined') {
 	it('should support symbol properties', function () {
 		var target = {};
