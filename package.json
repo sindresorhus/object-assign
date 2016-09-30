@@ -1,7 +1,7 @@
 {
   "name": "object-assign",
   "version": "4.1.0",
-  "description": "ES2015 Object.assign() ponyfill",
+  "description": "ES2015 `Object.assign()` ponyfill",
   "license": "MIT",
   "repository": "sindresorhus/object-assign",
   "author": {
@@ -13,7 +13,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && mocha",
+    "test": "xo && ava",
     "bench": "matcha bench.js"
   },
   "files": [
@@ -34,9 +34,9 @@
     "browser"
   ],
   "devDependencies": {
+    "ava": "^0.16.0",
     "lodash": "^4.8.2",
     "matcha": "^0.7.0",
-    "mocha": "*",
     "xo": "*"
   }
 }
