@@ -26,6 +26,22 @@ var source2 = {
 	p: 16
 };
 
+if (Object.assign) {
+	suite('Object.assign', function () {
+		bench('small', function () {
+			Object.assign({foo: 0}, {bar: 1});
+		});
+
+		bench('default options', function () {
+			Object.assign({}, {foo: 0}, {foo: 1});
+		});
+
+		bench('big', function () {
+			Object.assign({}, source1, source2);
+		});
+	});
+}
+
 suite('object-assign', function () {
 	bench('small', function () {
 		objectAssign({foo: 0}, {bar: 1});
