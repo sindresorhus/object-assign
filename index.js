@@ -55,9 +55,9 @@ function shouldUseNative() {
 	}
 }
 
-module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+module.exports = shouldUseNative() ? Object.assign : function () {
 	var from;
-	var to = toObject(target);
+	var to = toObject(arguments[0]);
 	var symbols;
 
 	for (var s = 1; s < arguments.length; s++) {

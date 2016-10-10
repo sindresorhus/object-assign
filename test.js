@@ -3,10 +3,6 @@ import test from 'ava';
 Object.assign = require('./');
 const objectAssign = require('./');
 
-test('have the correct length', t => {
-	t.is(objectAssign.length, 2);
-});
-
 test('throw when target is not an object', t => {
 	t.throws(() => {
 		objectAssign(null);
