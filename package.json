@@ -35,7 +35,7 @@
   ],
   "devDependencies": {
     "ava": "^0.16.0",
-    "lodash": "^4.8.2",
+    "lodash": "^4.16.4",
     "matcha": "^0.7.0",
     "xo": "*"
   }
