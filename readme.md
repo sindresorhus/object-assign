@@ -3,6 +3,13 @@
 > ES2015 [`Object.assign()`](http://www.2ality.com/2014/01/object-assign.html) [ponyfill](https://ponyfill.com)
 
 
+## Use the built-in
+
+Node.js 4 and up, as well as every evergreen browser (Chrome, Edge, Firefox, Opera, Safari),
+support `Object.assign()` :tada:. If you target only those environments, then by all
+means, use `Object.assign()` instead of this package.
+
+
 ## Install
 
 ```
