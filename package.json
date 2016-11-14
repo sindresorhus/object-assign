@@ -16,6 +16,7 @@
     "test": "xo && ava",
     "bench": "matcha bench.js"
   },
+  "main": "index.js",
   "files": [
     "index.js"
   ],
