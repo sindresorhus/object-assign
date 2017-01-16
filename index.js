@@ -1,7 +1,7 @@
 /*
- object-assign
- (c) Sindre Sorhus
- @license: MIT
+object-assign
+(c) Sindre Sorhus
+@license MIT
 */
 
 'use strict';
