@@ -13,12 +13,13 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && ava",
+    "test": "npm run build && xo src/index.js && ava",
+    "build": "rollup -c",
     "bench": "matcha bench.js"
   },
-  "main": "index.js",
+  "main": "index.min.js",
   "files": [
-    "index.js"
+    "index.min.js"
   ],
   "keywords": [
     "object",
@@ -38,6 +39,8 @@
     "ava": "^0.16.0",
     "lodash": "^4.16.4",
     "matcha": "^0.7.0",
+    "rollup": "^1.1.0",
+    "rollup-plugin-uglify": "^6.0.0",
     "xo": "^0.16.0"
   }
 }

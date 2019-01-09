@@ -16,6 +16,11 @@ means, use `Object.assign()` instead of this package.
 $ npm install --save object-assign
 ```
 
+Or in the browser from CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/object-assign@4.2.0/index.min.js"></script>
+```
 
 ## Usage
 

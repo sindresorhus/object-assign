@@ -1,7 +1,7 @@
 import test from 'ava';
 
-Object.assign = require('./');
-const objectAssign = require('./');
+Object.assign = require('./index.min');
+const objectAssign = require('./index.min');
 
 test('have the correct length', t => {
 	t.is(objectAssign.length, 2);
