@@ -13,7 +13,7 @@ means, use `Object.assign()` instead of this package.
 ## Install
 
 ```
-$ npm install --save object-assign
+$ npm install object-assign
 ```
 
 
