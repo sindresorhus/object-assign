@@ -48,7 +48,7 @@ Assigns enumerable own properties of `source` objects to the `target` object and
 
 ## Resources
 
-- [ES2015 spec - Object.assign](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign)
+- [ES2015 spec - Object.assign](https://www.ecma-international.org/ecma-262/6.0/#sec-object.assign)
 
 
 ---
