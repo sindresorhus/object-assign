@@ -1,4 +1,4 @@
-# object-assign
+# object-assign [![Build Status](https://github.com/sindresorhus/object-assign/actions/workflows/main.yml/badge.svg)](https://github.com/sindresorhus/object-assign/actions)
 
 > ES2015 [`Object.assign()`](http://www.2ality.com/2014/01/object-assign.html) [ponyfill](https://ponyfill.com)
 
